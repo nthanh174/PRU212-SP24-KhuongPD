@@ -1,0 +1,3176 @@
+fileFormatVersion: 2
+guid: 3860814805f14ca4287e874e661e948f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_PSD_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1367
+        width: 580
+        height: 654
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3092edd038ae22b4a80cb6d90be8c36f
+      internalID: -574944906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_1
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1333
+        width: 1016
+        height: 692
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521d0f9ee76c2b442be37ec0ae711860
+      internalID: -1222080441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_2
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 1677
+        width: 580
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c6938e6ec25a943a5cad549a178467
+      internalID: 883518869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_3
+      rect:
+        serializedVersion: 2
+        x: 2385
+        y: 1585
+        width: 440
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96d2d214be33fb468b9263498c12c62
+      internalID: 870283178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_4
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 1871
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438c8c2c6b1576846b182fac1208eb00
+      internalID: -1340863603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_5
+      rect:
+        serializedVersion: 2
+        x: 2973
+        y: 1849
+        width: 102
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fcd0741199e0a43851fce01419fbca
+      internalID: -1752249146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_6
+      rect:
+        serializedVersion: 2
+        x: 3137
+        y: 1875
+        width: 126
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18170280c2f93c840b4836725a5722c0
+      internalID: -400001572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_7
+      rect:
+        serializedVersion: 2
+        x: 3161
+        y: 1847
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f36c84a044c5804aa2eb92b98c381c3
+      internalID: 1515201448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_8
+      rect:
+        serializedVersion: 2
+        x: 3317
+        y: 1835
+        width: 86
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81b7429591f3134d9e6dec0040d358f
+      internalID: -1265517102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_9
+      rect:
+        serializedVersion: 2
+        x: 3469
+        y: 1841
+        width: 113
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee89d3ee9026a04aa979fc15fc5c1b1
+      internalID: 1370461531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_10
+      rect:
+        serializedVersion: 2
+        x: 3619
+        y: 1833
+        width: 154
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4719d22e4cae34ca1ebfd6b4df873e
+      internalID: -934042748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_11
+      rect:
+        serializedVersion: 2
+        x: 3829
+        y: 1814
+        width: 138
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f37f964c8a8b849852d33d3a9741b9
+      internalID: -833471781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_12
+      rect:
+        serializedVersion: 2
+        x: 2926
+        y: 1669
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40135e2b1234f34c8b9052b4a621b42
+      internalID: -1123144192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_13
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 1667
+        width: 68
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f1f7602f37de542a0724b8ee5001e6
+      internalID: -723087137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_14
+      rect:
+        serializedVersion: 2
+        x: 3187
+        y: 1669
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67924e0e538cab2409c0a076a07ce86d
+      internalID: -2072028327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_15
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 1669
+        width: 70
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfffb33f71bf424aaca2e2f4cdfcdcf
+      internalID: 190039413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_16
+      rect:
+        serializedVersion: 2
+        x: 3447
+        y: 1661
+        width: 66
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07abd695eea8ed540983d80e692e321d
+      internalID: -1646348856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_17
+      rect:
+        serializedVersion: 2
+        x: 3573
+        y: 1681
+        width: 77
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215c500268dc6834ebe0135ba3da9f23
+      internalID: 768820192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_18
+      rect:
+        serializedVersion: 2
+        x: 3700
+        y: 1661
+        width: 83
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cc310e469a29d42acc79734ede23e5
+      internalID: -1145292972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_19
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 1345
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bec997063248da4aa8b2dcd04ee690c
+      internalID: -565965670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_20
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 1347
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705dd9d21df66cf41ae0e8f31969b04c
+      internalID: -994846250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_21
+      rect:
+        serializedVersion: 2
+        x: 2939
+        y: 1539
+        width: 68
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafdc74d358074d47b5838eadfa573cb
+      internalID: -527363226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_22
+      rect:
+        serializedVersion: 2
+        x: 3051
+        y: 1553
+        width: 84
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27eb72a0d10151b47adcf81b55d6032e
+      internalID: -86100215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_23
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 1545
+        width: 96
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c26370f1f7ec1a498b51377c4d6e8c5
+      internalID: 479469520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_24
+      rect:
+        serializedVersion: 2
+        x: 3334
+        y: 1531
+        width: 59
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c38c0617d9af9469fe98cde66c8668
+      internalID: -265932473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_25
+      rect:
+        serializedVersion: 2
+        x: 3459
+        y: 1531
+        width: 58
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e96900b5df39340adaa3b806437ffb
+      internalID: -1804378001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_26
+      rect:
+        serializedVersion: 2
+        x: 3555
+        y: 1535
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7fe6a5f67b70449b9084f5a57fecef
+      internalID: 951586827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_27
+      rect:
+        serializedVersion: 2
+        x: 3699
+        y: 1529
+        width: 68
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f726326a396e146916cb381fee78a5
+      internalID: -1210108458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_28
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 1405
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5480eff5bd7614a40b3f0eee927234e6
+      internalID: 1662065427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_29
+      rect:
+        serializedVersion: 2
+        x: 2931
+        y: 1403
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75feaf65bb3ce0d4783d0c65e0462dc7
+      internalID: 1379923749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_30
+      rect:
+        serializedVersion: 2
+        x: 3063
+        y: 1401
+        width: 76
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b7ca01050755044843c4ddec3408bc
+      internalID: -1380912602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_31
+      rect:
+        serializedVersion: 2
+        x: 3211
+        y: 1401
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345753d019aa12b43896e676acbea35a
+      internalID: -1256260333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_32
+      rect:
+        serializedVersion: 2
+        x: 3341
+        y: 1403
+        width: 26
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b157492d59c757f4392334827a28c42b
+      internalID: 1333454138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_33
+      rect:
+        serializedVersion: 2
+        x: 3438
+        y: 1405
+        width: 77
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb961966f781d1840821ba9c45a6c3d6
+      internalID: -1436276488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_34
+      rect:
+        serializedVersion: 2
+        x: 3557
+        y: 1397
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9056725b97d4f4d95e40525b158e1f
+      internalID: 1203872982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_35
+      rect:
+        serializedVersion: 2
+        x: 3695
+        y: 1403
+        width: 72
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a3d91be88581c46a777be3538b991e
+      internalID: 67404604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_36
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1183
+        width: 190
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b62195136aa7742b1b6dd7698d7df7
+      internalID: 2054471360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_37
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 1185
+        width: 190
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca24d8fecc0f3724a9140238dfc5cea0
+      internalID: -738546209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_38
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1183
+        width: 190
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 056e0b2f2df0715439c88d1cd3fe2d8e
+      internalID: -1089531640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_39
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1181
+        width: 190
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d217c6816e7c54b4cae7035c6fa9bbcb
+      internalID: -471244939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_40
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 1185
+        width: 190
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddb389610e2adc40ae38fd58f156ad8
+      internalID: 2018722479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_41
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1119
+        width: 408
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c79dc830ca056848ad0bb235dd19a71
+      internalID: -1676964520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_42
+      rect:
+        serializedVersion: 2
+        x: 2917
+        y: 1270
+        width: 80
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2084f92fdae742f489b612788c6c6ef5
+      internalID: -911893121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_43
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 1267
+        width: 74
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8a080e9be7c6a498fac9a7d4fb8d23
+      internalID: -1307382947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_44
+      rect:
+        serializedVersion: 2
+        x: 3189
+        y: 1279
+        width: 86
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a82706251e6c784d9dc63c9cabc20d7
+      internalID: -1302214088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_45
+      rect:
+        serializedVersion: 2
+        x: 3322
+        y: 1279
+        width: 79
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd410ab8b5a71945805e24e7ac5148f
+      internalID: -1002416737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_46
+      rect:
+        serializedVersion: 2
+        x: 3414
+        y: 1281
+        width: 111
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71f5582f1e1e0145b0895eb0bfdcab7
+      internalID: 1466604284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_47
+      rect:
+        serializedVersion: 2
+        x: 3573
+        y: 1269
+        width: 94
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8701d2ecd109d2468f6d407f74486ba
+      internalID: -651267477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_48
+      rect:
+        serializedVersion: 2
+        x: 3710
+        y: 1271
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d71b735a51f6af4f840e512c0213dc2
+      internalID: -88505972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_49
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1111
+        width: 356
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd8b716c06bf1e4e83e81f26aee38ee
+      internalID: 1959624187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_50
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 947
+        width: 310
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e6dad1517a32b44b57cadf199f551d
+      internalID: -184839819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_51
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 1035
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4235c435e37594e9b728756d453892
+      internalID: -971668730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_52
+      rect:
+        serializedVersion: 2
+        x: 2911
+        y: 1145
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7dbec6f78743a4bb60b811e2f1f61f
+      internalID: 182725973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_53
+      rect:
+        serializedVersion: 2
+        x: 3067
+        y: 1149
+        width: 88
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4dddd4562184a4491c9a405bf68ae0
+      internalID: -1457913364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_54
+      rect:
+        serializedVersion: 2
+        x: 3191
+        y: 1151
+        width: 86
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55778c7676616c1498607c049ff4747e
+      internalID: -34205646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_55
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 1153
+        width: 82
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7122f18fc567e4482a9939c1663b3c
+      internalID: 424078051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_56
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 1151
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f38096227aa8b468a42b9e7cbf2049
+      internalID: -1589193432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_57
+      rect:
+        serializedVersion: 2
+        x: 3589
+        y: 1151
+        width: 74
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3824fde5d68d744b24e018f5960bcc
+      internalID: -1135765341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_58
+      rect:
+        serializedVersion: 2
+        x: 3717
+        y: 1155
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbe9f37a01e9f24e9223c79ecac57eb
+      internalID: -1505643763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_59
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1039
+        width: 74
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f511300a65d62409fd68a98af7bb00
+      internalID: 1070855581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_60
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1035
+        width: 76
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66e62621253f2f42afe8e594bb0850b
+      internalID: -1028355861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_61
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1047
+        width: 346
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa34bb4d2e57ad489f00877a019cc62
+      internalID: -1099339499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_62
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1085
+        width: 26
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1621115651f7b144936a3467bd5da22
+      internalID: 1225696665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_63
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 1087
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbdc9bdfeff46474fb306af5c7ec8013
+      internalID: 710939894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_64
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1059
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484f7bf4aabb2154c9254f123b205d7a
+      internalID: 314624481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_65
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1059
+        width: 62
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ad4cb0a0d9a3946ad6f0db53d4d4ee
+      internalID: 1316797928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_66
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1069
+        width: 98
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51edfa061aa8124468a749b142096706
+      internalID: -330032806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_67
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 1069
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607a1a08f02d4534eb43e78ad2e11001
+      internalID: 146583162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_68
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 893
+        width: 110
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856d5b4c9a8dbc146840c1aa2e8c76f1
+      internalID: 1257295549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_69
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 945
+        width: 86
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3acb325b960e9c4ea8ab0aa9f21775e
+      internalID: 1360179979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_70
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 945
+        width: 84
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280348e7695c8c644b9db97cb534ee7d
+      internalID: 472078931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_71
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 969
+        width: 60
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e359a5b6ac432154098922a28b471487
+      internalID: 325210564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_72
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 967
+        width: 60
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87721d953513b540877990ddb307c6d
+      internalID: 1651619163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_73
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 939
+        width: 548
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199b1c5ba44e01244ab8a418a8a643fd
+      internalID: 989897545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_74
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 851
+        width: 86
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ef15cfb8496da468e40e9eb680f459
+      internalID: 1315530271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_75
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 851
+        width: 82
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f247b06aa92e74d979f43c4e06517a
+      internalID: 1625997389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_76
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 853
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e22d066c4dc1344bbaea498c774668f
+      internalID: 1834552438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_77
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 903
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6376a73874ff6488c3d75cd62b99b5
+      internalID: -296034675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_78
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 901
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f98b830e7da79246a69344b63c74520
+      internalID: 869401170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_79
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 751
+        width: 680
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2fd1731bab0a1448cf9c3381cc29d9
+      internalID: -179927763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_80
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 755
+        width: 28
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fc3bd45aab0ada428339af2f36e6f7e
+      internalID: -163643557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_81
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 683
+        width: 184
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9243285d10fb71a4caebcfd399eabc4e
+      internalID: -460943471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_82
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 755
+        width: 298
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f1f46c80280ed4fb066a0df3ca48d9
+      internalID: -1242684867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_83
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 653
+        width: 242
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8652f4adbb38ac4597bd9a84cc87efd
+      internalID: -2074439399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_84
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 733
+        width: 108
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8dc831c0d55e04d810678fdd5f5128
+      internalID: -916970519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_85
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 735
+        width: 262
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2b6312e2ec22b4da891c9d28e69ea7
+      internalID: -1593841779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_86
+      rect:
+        serializedVersion: 2
+        x: 2281
+        y: 733
+        width: 262
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917c285a22eb97742940f9883e02c3a4
+      internalID: 746266614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_87
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 659
+        width: 638
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fc0f52ba91c0a4c82d4c070d06fe8f
+      internalID: 1050564591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_88
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 597
+        width: 106
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3508376f05119f488bc3cec2cb45e78
+      internalID: 1618612191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_89
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 639
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e630acab1faf434429092f9422097090
+      internalID: -50621001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_90
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 611
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b11f74b2f2dc174fa2ed3e06c60e5e0
+      internalID: -1384981897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_91
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 597
+        width: 262
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2566f6ada3112948a8b7c61a8175fb9
+      internalID: -1851649285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_92
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 595
+        width: 262
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885e120c41a4f6f4e842fea81bb29139
+      internalID: -555760917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_93
+      rect:
+        serializedVersion: 2
+        x: 2283
+        y: 593
+        width: 262
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e19d830f13a814b89e1ca1397faac0
+      internalID: -425148238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_94
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 427
+        width: 212
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9c97c0a890db943b165fbd4d5fac53
+      internalID: -1774953474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_95
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 425
+        width: 212
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11261d50e419d984cbd82cfdcb11a5a0
+      internalID: 840327283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_96
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 537
+        width: 102
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd008ae59204e944a1332cf47f04010
+      internalID: 331709657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_97
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 537
+        width: 102
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584ee29c77b09dc4faa56f45c111691e
+      internalID: 1154020673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_98
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 477
+        width: 184
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c3e0f470b5c7943bdfc22af56a4a8d
+      internalID: 1301834445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_99
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 611
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80666017a7779364d98d471a82bda4b3
+      internalID: -1471037533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_100
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 595
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0736a4a44d2a14a448d10e4bfd0fb610
+      internalID: -2043067505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_101
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 451
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13e36d53ec6b9f48b142213df8fa7f7
+      internalID: 2127471647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_102
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 451
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca79f7efb865f2f4684c23741da0c0be
+      internalID: -281641160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_103
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 449
+        width: 60
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdee6d01060d35143b6e0bc5095477be
+      internalID: -1459387824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_104
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 447
+        width: 120
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e300226482680184f93a64ee845068f2
+      internalID: -1420616995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_105
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 445
+        width: 110
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2669a4c7215c2394bbbc52b2a913405a
+      internalID: -1222217779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_106
+      rect:
+        serializedVersion: 2
+        x: 1373
+        y: 447
+        width: 117
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50f7270ee39627448c9ba460bce6664
+      internalID: -660760936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_107
+      rect:
+        serializedVersion: 2
+        x: 1521
+        y: 447
+        width: 82
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2862f558bab856418c7c2d1af85c57e
+      internalID: -213612341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_108
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 457
+        width: 104
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99416947a047f2d45af4e02f4b74b20a
+      internalID: -820782758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_109
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 451
+        width: 113
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51b8519de677cb41ac45444be54eb6f
+      internalID: -127309180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_110
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 447
+        width: 113
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e65408360485af4187e76655d7629a3
+      internalID: 9088493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_111
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 229
+        width: 180
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f112214a9e6b2194496b84a26800d721
+      internalID: 2122100328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_112
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 373
+        width: 68
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c779d548db29949bc969179b82eff0
+      internalID: -232237337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_113
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 373
+        width: 68
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e8c160b93cff143b569849459b258b
+      internalID: -922336704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_114
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 307
+        width: 98
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7972f769e3d19478c43d527a492a60
+      internalID: -2115983189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_115
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 301
+        width: 129
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535baa1cfb026b94ba173413015eef64
+      internalID: -180750231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_116
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 327
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1767d81cdd8d138449c6b3e37d8e6d3e
+      internalID: 1637315251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_117
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 317
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b834ae722c75e4d8aa76b7aa406268
+      internalID: -1884365512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_118
+      rect:
+        serializedVersion: 2
+        x: 1639
+        y: 329
+        width: 202
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca21db36dcaffb44fb636f2d962d2459
+      internalID: -657108237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_119
+      rect:
+        serializedVersion: 2
+        x: 1921
+        y: 339
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abc6983c0a5a3d40ba6dda9f1b41740
+      internalID: 155483872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_120
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 281
+        width: 541
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689c27759f07d694bb848d68d1c02d36
+      internalID: 346701101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_121
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 301
+        width: 196
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d6fb1f79ba0a0419f3893b88ca894a
+      internalID: -712918090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_122
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 259
+        width: 64
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7378168d8e0ea46894a1ffcb05cb91
+      internalID: 1013041163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_123
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 15
+        width: 242
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71368b65b23aa6c47938760be16b9f65
+      internalID: -937341515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_124
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 255
+        width: 188
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b238230252b1e488e1f6e395194237
+      internalID: 517834425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_125
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 243
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40ca737ac2e30d42bf92cec178085be
+      internalID: -1951862429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_126
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 195
+        width: 244
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b404351f9602e24aab342262a0b89bb
+      internalID: -602886029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_127
+      rect:
+        serializedVersion: 2
+        x: 1467
+        y: 205
+        width: 28
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f25989bbb452a4f98bf975e8e6288c
+      internalID: 648548374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_128
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 211
+        width: 84
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119122bae74e93f498a10e8c9688123b
+      internalID: -969856481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_129
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 43
+        width: 210
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845227032bb4b4849ac622ab65064dba
+      internalID: 1057723497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_130
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 213
+        width: 128
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b5f976fb90dda24e899975f54d5c0c0
+      internalID: -302382855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_131
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 195
+        width: 42
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7bd779cb5b2415418870fa47f9f987f
+      internalID: -975868465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_132
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 179
+        width: 122
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db29986606a383845ab6e81a96fc2da4
+      internalID: -213445527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_133
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 183
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b46e9e4ece05764cbae3ac491659abf
+      internalID: -534189857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_134
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 31
+        width: 132
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f404f737b735f8f46b4527725839d34a
+      internalID: 1937557459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_135
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 43
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9597cd72afefe024cb96d0ff8aacaec3
+      internalID: -940030805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_136
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 113
+        width: 236
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3595d0708b5177147b9bf777d4c962b8
+      internalID: -1036821463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PSD_137
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 23
+        width: 76
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdabdeb361e04d24498fa7863a4e9a28
+      internalID: 2005180238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      UI_PSD_0: -574944906
+      UI_PSD_1: -1222080441
+      UI_PSD_10: -934042748
+      UI_PSD_100: -2043067505
+      UI_PSD_101: 2127471647
+      UI_PSD_102: -281641160
+      UI_PSD_103: -1459387824
+      UI_PSD_104: -1420616995
+      UI_PSD_105: -1222217779
+      UI_PSD_106: -660760936
+      UI_PSD_107: -213612341
+      UI_PSD_108: -820782758
+      UI_PSD_109: -127309180
+      UI_PSD_11: -833471781
+      UI_PSD_110: 9088493
+      UI_PSD_111: 2122100328
+      UI_PSD_112: -232237337
+      UI_PSD_113: -922336704
+      UI_PSD_114: -2115983189
+      UI_PSD_115: -180750231
+      UI_PSD_116: 1637315251
+      UI_PSD_117: -1884365512
+      UI_PSD_118: -657108237
+      UI_PSD_119: 155483872
+      UI_PSD_12: -1123144192
+      UI_PSD_120: 346701101
+      UI_PSD_121: -712918090
+      UI_PSD_122: 1013041163
+      UI_PSD_123: -937341515
+      UI_PSD_124: 517834425
+      UI_PSD_125: -1951862429
+      UI_PSD_126: -602886029
+      UI_PSD_127: 648548374
+      UI_PSD_128: -969856481
+      UI_PSD_129: 1057723497
+      UI_PSD_13: -723087137
+      UI_PSD_130: -302382855
+      UI_PSD_131: -975868465
+      UI_PSD_132: -213445527
+      UI_PSD_133: -534189857
+      UI_PSD_134: 1937557459
+      UI_PSD_135: -940030805
+      UI_PSD_136: -1036821463
+      UI_PSD_137: 2005180238
+      UI_PSD_14: -2072028327
+      UI_PSD_15: 190039413
+      UI_PSD_16: -1646348856
+      UI_PSD_17: 768820192
+      UI_PSD_18: -1145292972
+      UI_PSD_19: -565965670
+      UI_PSD_2: 883518869
+      UI_PSD_20: -994846250
+      UI_PSD_21: -527363226
+      UI_PSD_22: -86100215
+      UI_PSD_23: 479469520
+      UI_PSD_24: -265932473
+      UI_PSD_25: -1804378001
+      UI_PSD_26: 951586827
+      UI_PSD_27: -1210108458
+      UI_PSD_28: 1662065427
+      UI_PSD_29: 1379923749
+      UI_PSD_3: 870283178
+      UI_PSD_30: -1380912602
+      UI_PSD_31: -1256260333
+      UI_PSD_32: 1333454138
+      UI_PSD_33: -1436276488
+      UI_PSD_34: 1203872982
+      UI_PSD_35: 67404604
+      UI_PSD_36: 2054471360
+      UI_PSD_37: -738546209
+      UI_PSD_38: -1089531640
+      UI_PSD_39: -471244939
+      UI_PSD_4: -1340863603
+      UI_PSD_40: 2018722479
+      UI_PSD_41: -1676964520
+      UI_PSD_42: -911893121
+      UI_PSD_43: -1307382947
+      UI_PSD_44: -1302214088
+      UI_PSD_45: -1002416737
+      UI_PSD_46: 1466604284
+      UI_PSD_47: -651267477
+      UI_PSD_48: -88505972
+      UI_PSD_49: 1959624187
+      UI_PSD_5: -1752249146
+      UI_PSD_50: -184839819
+      UI_PSD_51: -971668730
+      UI_PSD_52: 182725973
+      UI_PSD_53: -1457913364
+      UI_PSD_54: -34205646
+      UI_PSD_55: 424078051
+      UI_PSD_56: -1589193432
+      UI_PSD_57: -1135765341
+      UI_PSD_58: -1505643763
+      UI_PSD_59: 1070855581
+      UI_PSD_6: -400001572
+      UI_PSD_60: -1028355861
+      UI_PSD_61: -1099339499
+      UI_PSD_62: 1225696665
+      UI_PSD_63: 710939894
+      UI_PSD_64: 314624481
+      UI_PSD_65: 1316797928
+      UI_PSD_66: -330032806
+      UI_PSD_67: 146583162
+      UI_PSD_68: 1257295549
+      UI_PSD_69: 1360179979
+      UI_PSD_7: 1515201448
+      UI_PSD_70: 472078931
+      UI_PSD_71: 325210564
+      UI_PSD_72: 1651619163
+      UI_PSD_73: 989897545
+      UI_PSD_74: 1315530271
+      UI_PSD_75: 1625997389
+      UI_PSD_76: 1834552438
+      UI_PSD_77: -296034675
+      UI_PSD_78: 869401170
+      UI_PSD_79: -179927763
+      UI_PSD_8: -1265517102
+      UI_PSD_80: -163643557
+      UI_PSD_81: -460943471
+      UI_PSD_82: -1242684867
+      UI_PSD_83: -2074439399
+      UI_PSD_84: -916970519
+      UI_PSD_85: -1593841779
+      UI_PSD_86: 746266614
+      UI_PSD_87: 1050564591
+      UI_PSD_88: 1618612191
+      UI_PSD_89: -50621001
+      UI_PSD_9: 1370461531
+      UI_PSD_90: -1384981897
+      UI_PSD_91: -1851649285
+      UI_PSD_92: -555760917
+      UI_PSD_93: -425148238
+      UI_PSD_94: -1774953474
+      UI_PSD_95: 840327283
+      UI_PSD_96: 331709657
+      UI_PSD_97: 1154020673
+      UI_PSD_98: 1301834445
+      UI_PSD_99: -1471037533
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
