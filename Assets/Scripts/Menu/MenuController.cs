@@ -16,7 +16,10 @@ public class MenuController : MonoBehaviour
     private GameObject screenLevel;
     [SerializeField]
     private GameObject map1;
-
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private GameObject screenBar;
     [SerializeField]
     private GameObject screenDeath;
     [SerializeField]
@@ -29,6 +32,10 @@ public class MenuController : MonoBehaviour
     {
         HideScreen(screenDeath);
         HideScreen(map1);
+        HideScreen(screenLevel);
+        HideScreen(player);
+        HideScreen(screenBar);
+        HideScreen(screenDeath);
         DisplayScreen(screenMenu);
         AddListener();
     }
@@ -79,6 +86,8 @@ public class MenuController : MonoBehaviour
     public void ClickStart()
     {
         HideScreen(screenMenu);
+        DisplayScreen(player);
+        DisplayScreen(screenBar);
         DisplayScreen(map1);
     }
 

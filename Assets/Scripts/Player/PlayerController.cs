@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    public MenuController menuController;
+    private MenuController menuController;
 
     [SerializeField]
     private float speed = 10; // Tốc độ chạy
@@ -33,9 +33,10 @@ public class PlayerController : MonoBehaviour
     private LayerMask enemyLayers;*/
 
     [SerializeField]
-    private int maxHealth;
-    int curentHealth;
-    public BarController barController;
+    private int maxHealth = 100;
+    private int curentHealth;
+    [SerializeField]
+    private BarController barController;
 
     void Start()
     {
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.G)) {
             TakeDamage(20);
         }
+
         Move();
         Jump();
 /*        Rolling();*/
