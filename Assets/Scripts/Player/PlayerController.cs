@@ -7,8 +7,6 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    private MenuController menuController;
-
     [SerializeField]
     private float speed = 10; // Tốc độ chạy
     [SerializeField]
@@ -21,22 +19,25 @@ public class PlayerController : MonoBehaviour
     private int CurrentWeaponNo = 0; // Theo dõi loại vũ khí hiện tại, mặc định là không cầm vũ khí
     private float[] weaponLayerWeights; // Mảng lưu trữ trọng số của các layer vũ khí
 
-    private bool Attacked = false; // check xem có đang tấn công hay không
-    private int[] attackCombo = { 1, 2, 3 }; // Mảng lưu trữ các combo tấn công
-    private int currentComboIndex = 0;// Chỉ số của combo hiện tại
-
-/*    [SerializeField]
+    [SerializeField]
+    private float attackedRate = 2f;
+    private float nextAttackTime = 0f;
+    [SerializeField]
     private Transform attackPoint;
     [SerializeField]
-    private float attackRange = 0.5f;
+    private float attackRange = 1f;
     [SerializeField]
-    private LayerMask enemyLayers;*/
+    private LayerMask enemyLayers;
 
     [SerializeField]
     private int maxHealth = 100;
     private int curentHealth;
     [SerializeField]
     private BarController barController;
+
+    [SerializeField]
+    private GameObject screenGameOver;
+    private bool isGameOver = false;
 
     void Start()
     {
@@ -46,10 +47,12 @@ public class PlayerController : MonoBehaviour
         weaponLayerWeights = new float[animator.layerCount];
         curentHealth = maxHealth;
         barController.UpdateHealthBar(curentHealth, maxHealth);
+        screenGameOver.SetActive(false);
     }
 
     void Update()
     {
+        // test trừ máu
         if(Input.GetKeyUp(KeyCode.G)) {
             TakeDamage(20);
         }
@@ -90,24 +93,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-/*    void Rolling()
-    {
-        float move = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(move, 0);
-
-        // Kiểm tra nếu người chơi nhấn phím "C" và nhân vật đang ở trên mặt đất
-        if (Input.GetKeyDown(KeyCode.C) && isGrounded)
-        {
-            rb.velocity = new Vector2(movement.x * 2 * speed, rb.velocity.y);
-            animator.SetBool("isRolling", true);
-            ChangeDirection(move);
-        }
-        else
-        {
-            // Ngừng animation cuộn khi người chơi không nhấn phím "C" hoặc nhân vật không ở trên mặt đất
-            animator.SetBool("isRolling", false);
-        }
-    }*/
     void Jump()
     {
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
@@ -158,54 +143,57 @@ public class PlayerController : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && CurrentWeaponNo != 0)
+        if (Time.time >= nextAttackTime)
         {
-            Attacked = true;
-            animator.SetBool("isAttacked", Attacked);
-            PerformComboAttack();
-        }
-        else if (!Input.GetMouseButtonDown(0) && Attacked)
-        {
-            // Dừng hoạt ảnh tấn công nếu không có sự kiện tấn công nào diễn ra
-            animator.ResetTrigger("Attack1");
-            animator.ResetTrigger("Attack2");
-            animator.ResetTrigger("Attack3");
-            Attacked = false;
-            animator.SetBool("isAttacked", Attacked);
-        }
-    }
-    void PerformComboAttack()
-    {
-        int currentAttack = attackCombo[currentComboIndex];
-        switch (currentAttack)
-        {
-            case 1:
+            if (Input.GetMouseButtonDown(0) && CurrentWeaponNo != 0)
+            {
                 animator.SetTrigger("Attack1");
-                break;
-            case 2:
+                // Cập nhật thời gian tiếp theo có thể tấn công
+                nextAttackTime = Time.time + 1f / attackedRate;
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+                foreach(Collider2D hit in hitEnemies)
+                {
+                    Debug.Log("We hit " + enemyLayers);
+                }
+            }
+            else if (Input.GetMouseButtonDown(1) && CurrentWeaponNo != 0)
+            {
                 animator.SetTrigger("Attack2");
-                break;
-            case 3:
-                animator.SetTrigger("Attack3");
-                break;
-            default:
-                break;
-        }
-
-        currentComboIndex++;
-        if (currentComboIndex >= attackCombo.Length)
-        {
-            currentComboIndex = 0;
+                // Cập nhật thời gian tiếp theo có thể tấn công
+                nextAttackTime = Time.time + 3f / attackedRate;
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            }
         }
     }
     void TakeDamage(int damage)
     {
         curentHealth -= damage;
-        if (curentHealth <= 0)
+        if (curentHealth <= 0 && !isGameOver)
         {
             curentHealth = 0;
+            GameOver();
         }
         barController.UpdateHealthBar(curentHealth, maxHealth);
+    }
+    void GameOver()
+    {
+        // Dừng tất cả hoạt động trong game
+        Time.timeScale = 0f;
+
+        // Hiện panel game over
+        screenGameOver.SetActive(true);
+
+        // Đặt trạng thái game over
+        isGameOver = true;
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        if(attackPoint is null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
