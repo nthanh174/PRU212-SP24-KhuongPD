@@ -1,44 +1,87 @@
 ﻿using Pathfinding;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
     private AIPath aiPath;
-    [SerializeField]
-    private int maxHealth = 100;
-    private int curentHealth;
+    [SerializeField] private Animator animator;
+    [SerializeField] private int maxHealth = 100;
+    private int currentHealth;
 
-    void Update()
+    [SerializeField] private GameObject goldPrefab;
+    [SerializeField] private float goldDropChance = 0.7f;
+
+    private void Start()
+    {
+        aiPath = GetComponent<AIPath>();
+        animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+    }
+
+    private void Update()
     {
         ChangeDirection();
+        EnemyRun();
     }
-    void ChangeDirection()
+
+    private void ChangeDirection()
     {
-        // Đổi hướng quái
-        if (aiPath.desiredVelocity.x >= 0.01f)
+        if (aiPath != null)
         {
-            transform.localScale = new Vector2(1f, 1f); // Đổi X thành dương
-        }
-        else if (aiPath.desiredVelocity.x <= -0.01f)
-        {
-            transform.localScale = new Vector2(-1f, 1f); // Đổi X thành âm
+            if (aiPath.desiredVelocity.x >= 0.01f)
+            {
+                transform.localScale = new Vector2(1f, 1f);
+            }
+            else if (aiPath.desiredVelocity.x <= -0.01f)
+            {
+                transform.localScale = new Vector2(-1f, 1f);
+            }
         }
     }
-    void TakeDamage(int damage)
+
+    private void EnemyRun()
     {
-        curentHealth -= damage;
-        if (curentHealth <= 0)
+        if (aiPath != null)
         {
-            curentHealth = 0;
+            float velocityMagnitude = aiPath.velocity.magnitude;
+            if (velocityMagnitude > 0.1f)
+            {
+                animator.SetBool("isRunning", true);
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("Enemy takes damage: " + damage); // Thêm thông báo ra console
+        currentHealth -= damage;
+        Debug.Log("Enemy Health: " + currentHealth); // Thêm thông báo ra console
+        if (currentHealth <= 0)
+        {
             Die();
         }
     }
-    void Die()
+
+
+    private void Die()
     {
-        Debug.Log(" be attacked");
+        animator.SetBool("isDie", true);
+        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length); // Hủy GameObject sau khi hoàn thành animation "Die"
+
+        // Kiểm tra xem có rơi vàng không
+        if (Random.value <= goldDropChance)
+        {
+            DropGold();
+        }
+    }
+
+    private void DropGold()
+    {
+        // Tạo vàng tại vị trí hiện tại của quái vật
+        Instantiate(goldPrefab, transform.position, Quaternion.identity);
     }
 }

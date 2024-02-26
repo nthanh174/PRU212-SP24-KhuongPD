@@ -47,19 +47,20 @@ public class PlayerController : MonoBehaviour
         weaponLayerWeights = new float[animator.layerCount];
         curentHealth = maxHealth;
         barController.UpdateHealthBar(curentHealth, maxHealth);
+        barController.UpdateCoinhBar(0);
         screenGameOver.SetActive(false);
     }
 
     void Update()
     {
         // test trừ máu
-        if(Input.GetKeyUp(KeyCode.G)) {
+        if (Input.GetKeyUp(KeyCode.G)) {
             TakeDamage(20);
         }
 
         Move();
         Jump();
-/*        Rolling();*/
+        /*        Rolling();*/
         ChangeWeapon();
         Attack();
     }
@@ -148,20 +149,27 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && CurrentWeaponNo != 0)
             {
                 animator.SetTrigger("Attack1");
-                // Cập nhật thời gian tiếp theo có thể tấn công
-                nextAttackTime = Time.time + 1f / attackedRate;
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-                foreach(Collider2D hit in hitEnemies)
-                {
-                    Debug.Log("We hit " + enemyLayers);
-                }
+                PerformAttack(1);
             }
             else if (Input.GetMouseButtonDown(1) && CurrentWeaponNo != 0)
             {
                 animator.SetTrigger("Attack2");
-                // Cập nhật thời gian tiếp theo có thể tấn công
-                nextAttackTime = Time.time + 3f / attackedRate;
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+                PerformAttack(2);
+            }
+        }
+    }
+    void PerformAttack(int attackType)
+    {
+        nextAttackTime = Time.time + (attackType == 1 ? 1f : 3f) / attackedRate;
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D hit in hitEnemies)
+        {
+            EnemyController enemy = hit.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                // Gọi phương thức TakeDamage() của đối tượng enemy
+                enemy.TakeDamage(20); // Truyền vào lượng sát thương cần gây ra
             }
         }
     }
@@ -186,7 +194,7 @@ public class PlayerController : MonoBehaviour
         // Đặt trạng thái game over
         isGameOver = true;
     }
-    
+
     private void OnDrawGizmosSelected()
     {
         if(attackPoint is null)
@@ -213,6 +221,16 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
             animator.SetBool("isJumping", true); // Bật animation nhảy khi nhân vật rời khỏi mặt đất
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // xử lý khi nhân vật chạm vào vàng
+        if (collision.gameObject.CompareTag("gold"))
+        {
+            Destroy(collision.gameObject);
+            Debug.Log("Đã ăn vàng");
+            barController.UpdateCoinhBar(10);
         }
     }
 

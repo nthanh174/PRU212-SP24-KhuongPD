@@ -18,6 +18,9 @@ public class EnemyAI : MonoBehaviour
     private float moveSpeed = 3f;
     [SerializeField]
     private float nextWPDistance = 0.3f;
+    [SerializeField]
+    private float maxDistanceToPlayer = 15f; // Khoảng cách tối đa giữa EnemyAI và Player để bắt đầu di chuyển về phía Player
+
 
     void Start()
     {
@@ -26,10 +29,16 @@ public class EnemyAI : MonoBehaviour
 
     void CalculatePath()
     {
-        Vector2 target = FindTarget();
-        if (seeker.IsDone() && (updateContinuesPath || reachDestination))
+        Vector3 playerPos = FindObjectOfType<PlayerController>().transform.position;
+        float distanceToPlayer = Vector3.Distance(transform.position, playerPos); // Tính khoảng cách đến Player
+
+        if (distanceToPlayer <= maxDistanceToPlayer) // Kiểm tra nếu khoảng cách nhỏ hơn hoặc bằng khoảng cách tối đa
         {
-            seeker.StartPath(transform.position, target, OnPathComplete);
+            Vector2 target = FindTarget();
+            if (seeker.IsDone() && (updateContinuesPath || reachDestination))
+            {
+                seeker.StartPath(transform.position, target, OnPathComplete);
+            }
         }
     }
 
@@ -58,7 +67,6 @@ public class EnemyAI : MonoBehaviour
             return (Vector2)playerPos;
         }
     }
-
 
     void OnPathComplete(Path p)
     {
