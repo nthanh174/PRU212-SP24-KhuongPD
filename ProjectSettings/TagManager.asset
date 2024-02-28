@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - gold
-  - enemy
+  - Gold
+  - Enemy
+  - SpawnerEnemy
   layers:
   - Default
   - TransparentFX

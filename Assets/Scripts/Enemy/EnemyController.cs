@@ -57,9 +57,9 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Enemy takes damage: " + damage); // Thêm thông báo ra console
+        Debug.Log("Enemy takes damage: " + damage);
         currentHealth -= damage;
-        Debug.Log("Enemy Health: " + currentHealth); // Thêm thông báo ra console
+        Debug.Log("Enemy Health: " + currentHealth);
         if (currentHealth <= 0)
         {
             Die();
@@ -71,12 +71,7 @@ public class EnemyController : MonoBehaviour
     {
         animator.SetBool("isDie", true);
         Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length); // Hủy GameObject sau khi hoàn thành animation "Die"
-
-        // Kiểm tra xem có rơi vàng không
-        if (Random.value <= goldDropChance)
-        {
-            DropGold();
-        }
+        DropGold();
     }
 
     private void DropGold()

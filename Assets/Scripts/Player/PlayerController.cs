@@ -226,7 +226,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // xử lý khi nhân vật chạm vào vàng
-        if (collision.gameObject.CompareTag("gold"))
+        if (collision.gameObject.CompareTag("Gold"))
         {
             Destroy(collision.gameObject);
             Debug.Log("Đã ăn vàng");

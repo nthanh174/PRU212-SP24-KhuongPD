@@ -1,71 +1,85 @@
-﻿using Pathfinding.Util;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] protected string enemyName = "";
-    [SerializeField] protected int spawnLimit = 2;
     public GameObject enemyPrefab;
+    public float spawnRate = 2f;
+    public int maxNumberOfEnemies = 4;
+    public float distanceToPlayerToStartSpawning = 5f;
+    public float spawnDelay = 1f;
 
-
-    public float spawnRate = 1f; // Tần suất xuất hiện của quái vật
-    public int numberOfEnemies = 3; // Số lượng quái vật cần sinh ra
-
+    private bool canStartSpawning = false;
     private float spawnTimer = 0f;
-
-    public float spawnRadius = 10f; // Bán kính khu vực xuất hiện
+    private int numberOfEnemiesSpawned = 0;
+    private Transform spawnPoint;
 
     void Start()
     {
-        SpawnEnemies();
+        // Tìm GameObject có tag "SpawnerEnemy" và gán giá trị cho biến spawnPoint
+        GameObject spawnPointObject = GameObject.FindGameObjectWithTag("SpawnerEnemy");
+        if (spawnPointObject != null)
+        {
+            spawnPoint = spawnPointObject.transform;
+        }
+        else
+        {
+            Debug.LogError("No object found with tag 'SpawnerEnemy'");
+        }
+
+        InvokeRepeating("SpawnEnemy", 0f, spawnRate);
     }
 
     void Update()
     {
-        // Tăng hẹn giờ spawn
+        // Kiểm tra nếu điều kiện khoảng cách giữa người chơi và quái vật được thỏa mãn
+        if (!canStartSpawning)
+        {
+            float distanceToPlayer = Vector3.Distance(transform.position, FindObjectOfType<PlayerController>().transform.position);
+            if (distanceToPlayer <= distanceToPlayerToStartSpawning)
+            {
+                canStartSpawning = true;
+            }
+        }
+
+        // Đếm thời gian giữa các lần spawn
         spawnTimer += Time.deltaTime;
-
-        // Kiểm tra nếu đến lúc tạo quái vật mới
-        if (spawnTimer >= spawnRate)
-        {
-            SpawnEnemy();
-            spawnTimer = 0f; // Reset hẹn giờ
-        }
-    }
-
-protected virtual void Spawning()
-    {
-        Invoke("Spawning", 2);
-        if (!this.CanSpawn()) return;
-        float x = Random.Range(-7f, 7f);
-        float y = Random.Range(3f, 6f);
-        Vector2 spawnPos = new Vector2(x, y);
-/*        Transform obj = ObjectPool.Spawn(this.enemyName, spawnPos, transform.rotation, transform);
-        obj.gameObject.SetActive(true);*/
-    }
-
-    protected virtual bool CanSpawn()
-    {
-        int childCount = transform.childCount;
-        Debug.Log(childCount);
-        if (childCount >= this.spawnLimit) return false;
-        return true;
-    }
-
-    void SpawnEnemies()
-    {
-        for (int i = 0; i < numberOfEnemies; i++)
-        {
-            SpawnEnemy();
-        }
     }
 
     void SpawnEnemy()
     {
-        // Tạo vị trí spawn ngẫu nhiên trong bán kính spawnRadius
-        Vector2 randomPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+        if (canStartSpawning && CheckSpawnLimit() && spawnTimer >= spawnDelay)
+        {
+            if (spawnPoint != null)
+            {
+                Vector3 spawnPosition = FindGroundPosition(spawnPoint.position);
+                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                spawnTimer = 0f;
+                numberOfEnemiesSpawned++;
+            }
+            else
+            {
+                Debug.LogError("Spawn point not assigned!");
+            }
+        }
+    }
 
-        // Instantiate quái vật tại vị trí spawn ngẫu nhiên
-        Instantiate(enemyPrefab, randomPosition, Quaternion.identity);
+    bool CheckSpawnLimit()
+    {
+        int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        return currentEnemies < maxNumberOfEnemies && numberOfEnemiesSpawned < maxNumberOfEnemies;
+    }
+
+    Vector3 FindGroundPosition(Vector3 origin)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(origin, Vector3.down, out hit, Mathf.Infinity))
+        {
+            return hit.point;
+        }
+        else
+        {
+            Debug.LogWarning("No ground found!");
+            return origin;
+        }
     }
 }
