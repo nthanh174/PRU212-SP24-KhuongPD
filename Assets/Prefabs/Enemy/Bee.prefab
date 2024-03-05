@@ -14,12 +14,10 @@ GameObject:
   - component: {fileID: 3996927384864201772}
   - component: {fileID: 3993861338392510849}
   - component: {fileID: 2121334718301383889}
-  - component: {fileID: 135491106323240069}
-  - component: {fileID: 6918823151950878730}
-  - component: {fileID: 4669696076997134455}
+  - component: {fileID: 5534840511171767298}
   m_Layer: 7
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +164,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2121334718301383889
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,14 +187,14 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 768
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.062265396, y: 0.07783157}
@@ -212,7 +210,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3575418, y: 1.3943368}
   m_EdgeRadius: 0
---- !u!114 &135491106323240069
+--- !u!114 &5534840511171767298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,44 +219,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1741657271348640349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d19935169fb76674cbe9df227cfd53a5, type: 3}
+  m_Script: {fileID: 11500000, guid: afbc5d39c597faa44bb50f74ee73dfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   seeker: {fileID: 3996927384864201772}
+  animator: {fileID: 964833510415528404}
   roaming: 1
   updateContinuesPath: 1
   moveSpeed: 3
   nextWPDistance: 0.3
---- !u!114 &6918823151950878730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741657271348640349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a925bc3d1e150b46900cae49d280596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 964833510415528404}
+  maxDistanceToPlayer: 15
+  distanceToPlayer: 50
+  desiredHeight: 50
+  isAttack: 1
+  flyAttack: {fileID: 1752032333330272830, guid: 88a50d446f1cc744f82c4c6fa7bfd52c, type: 3}
+  attackSpeed: 9
+  timeBtwAttack: 2
+  attackCooldown: 0
+  attackRange: 15
   maxHealth: 100
   goldPrefab: {fileID: 8287083497620427429, guid: afcb8aaffb245be488dc88ffc7bb5fc4, type: 3}
   goldDropChance: 0.7
---- !u!114 &4669696076997134455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741657271348640349}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a2411753e547c4f8d10c1216fad821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1741657271348640349}
-  spawnRate: 2
-  maxNumberOfEnemies: 4
-  distanceToPlayerToStartSpawning: 15
-  spawnDelay: 1

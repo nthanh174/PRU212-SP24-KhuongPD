@@ -165,11 +165,11 @@ public class PlayerController : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D hit in hitEnemies)
         {
-            EnemyController enemy = hit.GetComponent<EnemyController>();
-            if (enemy != null)
+            EnemyAI enemyAI = hit.GetComponent<EnemyAI>();
+            if (enemyAI != null)
             {
                 // Gọi phương thức TakeDamage() của đối tượng enemy
-                enemy.TakeDamage(20); // Truyền vào lượng sát thương cần gây ra
+                enemyAI.TakeDamage(20); // Truyền vào lượng sát thương cần gây ra
             }
         }
     }

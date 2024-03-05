@@ -4,55 +4,81 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private AIPath aiPath;
-    [SerializeField] private Animator animator;
-    [SerializeField] private int maxHealth = 100;
+    public Animator animator;
+    public int maxHealth = 100;
     private int currentHealth;
 
-    [SerializeField] private GameObject goldPrefab;
-    [SerializeField] private float goldDropChance = 0.7f;
+    public GameObject goldPrefab;
+    public float goldDropChance = 0.7f;
 
-    private void Start()
+    public Transform player;
+    public float attackDistance = 10f; // Khoảng cách để tấn công người chơi
+    private bool isAttacking = false; // Biến để kiểm tra xem quái vật có đang tấn công không
+
+    void Start()
     {
         aiPath = GetComponent<AIPath>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
-    private void Update()
-    {
-        ChangeDirection();
-        EnemyRun();
-    }
-
-    private void ChangeDirection()
+    void Update()
     {
         if (aiPath != null)
         {
-            if (aiPath.desiredVelocity.x >= 0.01f)
+            ChangeDirection();
+            if (!isAttacking) // Kiểm tra xem quái vật có đang tấn công không
             {
-                transform.localScale = new Vector2(1f, 1f);
-            }
-            else if (aiPath.desiredVelocity.x <= -0.01f)
-            {
-                transform.localScale = new Vector2(-1f, 1f);
+                CheckForPlayer();
             }
         }
     }
 
-    private void EnemyRun()
+    void ChangeDirection()
     {
-        if (aiPath != null)
+        if (aiPath.desiredVelocity.x >= 0.01f)
         {
-            float velocityMagnitude = aiPath.velocity.magnitude;
-            if (velocityMagnitude > 0.1f)
-            {
-                animator.SetBool("isRunning", true);
-            }
-            else
-            {
-                animator.SetBool("isRunning", false);
-            }
+            transform.localScale = new Vector2(1f, 1f);
         }
+        else if (aiPath.desiredVelocity.x <= -0.01f)
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
+    }
+
+    void EnemyRun()
+    {
+        float velocityMagnitude = aiPath.desiredVelocity.magnitude;
+        Debug.Log("Enemy Speed: " + velocityMagnitude);
+        animator.SetFloat("Speed", velocityMagnitude);
+    }
+
+    void CheckForPlayer()
+    {
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position); // Tính khoảng cách đến người chơi
+
+        if (distanceToPlayer <= attackDistance)
+        {
+            // Nếu khoảng cách nhỏ hơn hoặc bằng khoảng cách tấn công, quái vật sẽ tấn công
+            AttackPlayer();
+        }
+        else
+        {
+            // Nếu khoảng cách lớn hơn khoảng cách tấn công, quái vật sẽ di chuyển đến người chơi
+            EnemyRun();
+        }
+    }
+    void AttackPlayer()
+    {
+        // Thực hiện hành động tấn công
+        Debug.Log("Enemy attacks player!");
+        animator.SetTrigger("Attack"); // Kích hoạt trigger trong animator để chạy animation tấn công
+        isAttacking = true; // Đặt trạng thái tấn công
+    }
+
+    public void EndAttackAnimation()
+    {
+        isAttacking = false; // Kết thúc animation tấn công, đặt trạng thái tấn công lại là false
     }
 
     public void TakeDamage(int damage)
@@ -67,14 +93,16 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    private void Die()
+    void Die()
     {
+        // Thực hiện hành động khi quái vật chết
+        Debug.Log("Enemy dies!");
         animator.SetBool("isDie", true);
-        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length); // Hủy GameObject sau khi hoàn thành animation "Die"
+        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
         DropGold();
     }
 
-    private void DropGold()
+    void DropGold()
     {
         // Tạo vàng tại vị trí hiện tại của quái vật
         Instantiate(goldPrefab, transform.position, Quaternion.identity);

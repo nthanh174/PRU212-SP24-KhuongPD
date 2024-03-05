@@ -8,6 +8,7 @@ TagManager:
   - Gold
   - Enemy
   - SpawnerEnemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

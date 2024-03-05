@@ -15,8 +15,6 @@ GameObject:
   - component: {fileID: -5733785847440160333}
   - component: {fileID: 6359509631940167296}
   - component: {fileID: 5621827832247638227}
-  - component: {fileID: 58502347357348990}
-  - component: {fileID: 6127916074464275047}
   m_Layer: 7
   m_Name: Slime
   m_TagString: Enemy
@@ -134,7 +132,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 768
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -225,41 +223,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeker: {fileID: 6359509631940167296}
-  roaming: 1
+  animator: {fileID: 1243006415612433203}
+  roaming: 0
   updateContinuesPath: 1
   moveSpeed: 3
-  nextWPDistance: 0.3
-  maxDistanceToPlayer: 15
---- !u!114 &58502347357348990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3877702667474493283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a925bc3d1e150b46900cae49d280596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1243006415612433203}
+  nextWPDistance: 0.1
+  maxDistanceToPlayer: 10
+  distanceToPlayer: 50
+  desiredHeight: 0
+  isAttack: 0
+  flyAttack: {fileID: 0}
+  attackSpeed: 9
+  timeBtwAttack: 2
+  attackCooldown: 0
+  attackRange: 15
   maxHealth: 100
   goldPrefab: {fileID: 8287083497620427429, guid: afcb8aaffb245be488dc88ffc7bb5fc4, type: 3}
   goldDropChance: 0.7
---- !u!114 &6127916074464275047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3877702667474493283}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a2411753e547c4f8d10c1216fad821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3877702667474493283}
-  spawnRate: 2
-  maxNumberOfEnemies: 4
-  distanceToPlayerToStartSpawning: 15
-  spawnDelay: 1
