@@ -55,7 +55,9 @@ public class EnemySpawner : MonoBehaviour
 
     bool CheckSpawnLimit()
     {
-        int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        return currentEnemies < maxNumberOfEnemies && numberOfEnemiesSpawned < maxNumberOfEnemies;
+        /*        int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
+                int a = enemyPrefab.GetInstanceID();
+                return currentEnemies < maxNumberOfEnemies && numberOfEnemiesSpawned < maxNumberOfEnemies;*/
+        return numberOfEnemiesSpawned < maxNumberOfEnemies;
     }
 }

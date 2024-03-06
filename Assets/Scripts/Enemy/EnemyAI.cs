@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using System.Linq;
 
 public class EnemyAI : MonoBehaviour
 {
     private Path path;
     private Coroutine coroutine;
     public Seeker seeker;
+    public DetectionZone detectionZone;
 
     public Animator animator;
 
@@ -24,11 +26,13 @@ public class EnemyAI : MonoBehaviour
 
     //attack
     public bool isAttack = false;
+    public bool attackFar = false;
+    public int enemyDamage = 20;
+    public float attackRange = 15f;
     public GameObject flyAttack;
     public float attackSpeed = 9f;
     public float timeBtwAttack = 2f;
     public float attackCooldown;
-    public float attackRange = 15f;
 
     //health
     public int maxHealth = 100;
@@ -50,12 +54,16 @@ public class EnemyAI : MonoBehaviour
         if(attackCooldown < 0f)
         {
             attackCooldown = timeBtwAttack;
-            if (IsPlayerInRange(attackRange))
+            if (IsPlayerInRange(attackRange) && attackFar)
+            {
+                EnemyAttack();
+            } else if (!attackFar)
             {
                 EnemyAttack();
             }
         }
         ChangeDirection();
+        EnemyRun();
     }
     //điều khuyển quái
     void ChangeDirection()
@@ -73,6 +81,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void EnemyRun()
+    {
+        // Thực hiện animation run khi đang di chuyển và chưa đến điểm đích
+        animator.SetBool("isRunning", path != null && path.vectorPath.Count > 0 && !reachDestination);
+    }
+
+
 
     // Tấn công người chơi
     bool IsPlayerInRange(float range)
@@ -84,12 +99,35 @@ public class EnemyAI : MonoBehaviour
 
     void EnemyAttack()
     {
-        var attackTmp = Instantiate(flyAttack, transform.position, Quaternion.identity);
-        Rigidbody2D rb = attackTmp.GetComponent<Rigidbody2D>(); // Sử dụng Rigidbody2D thay vì Rigidbody
-        Vector3 playerPos = FindObjectOfType<PlayerController>().transform.position;
-        Vector2 direction = (playerPos - transform.position).normalized; // Sử dụng Vector2 cho hướng
-        rb.AddForce(direction * attackSpeed, ForceMode2D.Impulse); // Sử dụng ForceMode2D.Impulse thay vì (ForceMode)ForceMode2D.Impulse
+        if (attackFar)
+        {
+            var attackTmp = Instantiate(flyAttack, transform.position, Quaternion.identity);
+
+            attackTmp.GetComponent<EnemyBullet>().SetDamageToPlayer(enemyDamage);
+
+            Rigidbody2D rb = attackTmp.GetComponent<Rigidbody2D>();
+            Vector3 playerPos = FindObjectOfType<PlayerController>().transform.position;
+            Vector2 direction = (playerPos - transform.position).normalized;
+            rb.AddForce(direction * attackSpeed, ForceMode2D.Impulse);
+            animator.SetTrigger("Attack");
+            // Dừng di chuyển của quái vật
+            StopCoroutine(coroutine);
+        }
+        else
+        {
+            // Kiểm tra nếu người chơi nằm trong vùng detectionZone
+            if (detectionZone.detecedCollider.Contains(FindObjectOfType<PlayerController>().GetComponent<Collider2D>()))
+            {
+                // Kích hoạt animation tấn công
+                animator.SetTrigger("Attack");
+                // Gây sát thương cho người chơi
+                FindObjectOfType<PlayerController>().TakeDamage(enemyDamage);
+                // Dừng di chuyển của quái vật
+                StopCoroutine(coroutine);
+            }
+        }
     }
+
 
     // nhận damge
     public void TakeDamage(int damage)
@@ -103,14 +141,25 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    IEnumerator DieCoroutine()
+    {
+        // Đặt trạng thái của animator thành "isDeath" là true
+        animator.SetBool("isDeath", true);
+
+        // Chờ đợi cho đến khi animation kết thúc
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        // Thực hiện hành động sau khi animation kết thúc
+        DropGold();
+
+        // Xóa đối tượng
+        Destroy(gameObject);
+    }
 
     void Die()
     {
-        // Thực hiện hành động khi quái vật chết
-        Debug.Log("Enemy dies!");
-        animator.SetBool("isDie", true);
-        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
-        DropGold();
+        // Bắt đầu coroutine để xử lý việc chờ animation kết thúc
+        StartCoroutine(DieCoroutine());
     }
 
     void DropGold()

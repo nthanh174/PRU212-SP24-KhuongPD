@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         curentHealth -= damage;
         if (curentHealth <= 0 && !isGameOver)
@@ -203,7 +203,7 @@ public class PlayerController : MonoBehaviour
         }
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -214,17 +214,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isJumping", false);
             }
         }
-    }
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-            animator.SetBool("isJumping", true); // Bật animation nhảy khi nhân vật rời khỏi mặt đất
-        }
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
+
         // xử lý khi nhân vật chạm vào vàng
         if (collision.gameObject.CompareTag("Gold"))
         {
@@ -234,4 +224,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            animator.SetBool("isJumping", true); // Bật animation nhảy khi nhân vật rời khỏi mặt đất
+        }
+    }
+
 }
+
