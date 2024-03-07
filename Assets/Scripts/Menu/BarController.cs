@@ -6,12 +6,9 @@ using UnityEngine.UI;
 
 public class BarController : MonoBehaviour
 {
-    [SerializeField]
-    private Image redBar;
-    [SerializeField]
-    private TextMeshProUGUI txtHealth;
-    [SerializeField]
-    private TextMeshProUGUI txtCoin;
+    public Image redBar;
+    public TextMeshProUGUI txtHealth;
+    public TextMeshProUGUI txtCoin;
 
     private int currentCoin = 0;
     private int getCoin = 0;

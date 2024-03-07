@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using System.Linq;
+using TMPro;
 
 public class EnemyAI : MonoBehaviour
 {
     private Path path;
-    private Coroutine coroutine;
+    public Coroutine coroutine;
     public Seeker seeker;
     public DetectionZone detectionZone;
 
@@ -35,17 +36,18 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown;
 
     //health
+    public TextMeshPro txtHealth;
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
     //gold
     public GameObject goldPrefab;
     public float goldDropChance = 0.7f;
-
 
     void Start()
     {
         InvokeRepeating("CalculatePath", 0f, 0.5f);
         currentHealth = maxHealth;
+        SetHealth(currentHealth);
     }
 
     void Update()
@@ -87,8 +89,6 @@ public class EnemyAI : MonoBehaviour
         animator.SetBool("isRunning", path != null && path.vectorPath.Count > 0 && !reachDestination);
     }
 
-
-
     // Tấn công người chơi
     bool IsPlayerInRange(float range)
     {
@@ -128,6 +128,18 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // set máu quái
+    public void SetHealth(int health)
+    {
+        currentHealth = health;
+        txtHealth.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+    }
+
+    //quay lại pos
+    public void ReturnToPosSpam()
+    {
+        transform.position = transform.parent.position;
+    }
 
     // nhận damge
     public void TakeDamage(int damage)
@@ -139,6 +151,7 @@ public class EnemyAI : MonoBehaviour
         {
             Die();
         }
+        SetHealth(currentHealth);
     }
 
     IEnumerator DieCoroutine()

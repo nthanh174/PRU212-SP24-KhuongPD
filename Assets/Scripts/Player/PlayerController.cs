@@ -4,51 +4,49 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 10; // Tốc độ chạy
-    [SerializeField]
-    private float jumpForce = 10; // Độ cao khi nhảy
+    public float speed = 10; // Tốc độ chạy
+    public float jumpForce = 10; // Độ cao khi nhảy
     private bool isGrounded; // Kiểm tra khi có sự va chạm vào map
     private Rigidbody2D rb;
-    [SerializeField]
-    private Animator animator;
+    public Animator animator;
+
 
     private int CurrentWeaponNo = 0; // Theo dõi loại vũ khí hiện tại, mặc định là không cầm vũ khí
     private float[] weaponLayerWeights; // Mảng lưu trữ trọng số của các layer vũ khí
 
-    [SerializeField]
-    private float attackedRate = 2f;
+
+    public float attackedRate = 2f;
     private float nextAttackTime = 0f;
-    [SerializeField]
-    private Transform attackPoint;
-    [SerializeField]
-    private float attackRange = 1f;
-    [SerializeField]
-    private LayerMask enemyLayers;
+    public Transform attackPoint;
+    public float attackRange = 1f;
+    public LayerMask enemyLayers;
 
-    [SerializeField]
-    private int maxHealth = 100;
+
+    public int maxHealth = 100;
     private int curentHealth;
-    [SerializeField]
-    private BarController barController;
+    public BarController barController;
 
-    [SerializeField]
-    private GameObject screenGameOver;
-    private bool isGameOver = false;
+    private EnemyAI enemyAI;
+    private Vector2 newCheckPoint;
+    public GameOverUI gameOverUI;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
         // Khởi tạo mảng weaponLayerWeights với kích thước bằng với số lượng layer trong Animator
         weaponLayerWeights = new float[animator.layerCount];
         curentHealth = maxHealth;
         barController.UpdateHealthBar(curentHealth, maxHealth);
         barController.UpdateCoinhBar(0);
-        screenGameOver.SetActive(false);
+
+        gameOverUI.screenGameOver.SetActive(false);
     }
 
     void Update()
@@ -60,7 +58,6 @@ public class PlayerController : MonoBehaviour
 
         Move();
         Jump();
-        /*        Rolling();*/
         ChangeWeapon();
         Attack();
     }
@@ -176,24 +173,56 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         curentHealth -= damage;
-        if (curentHealth <= 0 && !isGameOver)
+        if (curentHealth <= 0)
         {
             curentHealth = 0;
-            GameOver();
+            gameOverUI.GameOver();
         }
         barController.UpdateHealthBar(curentHealth, maxHealth);
     }
-    void GameOver()
+
+    //Check Point Pos
+    public void UpdateCheckPoint(Vector2 checkPoint)
     {
-        // Dừng tất cả hoạt động trong game
-        Time.timeScale = 0f;
+        if(newCheckPoint != checkPoint)
+        {
+            newCheckPoint = checkPoint;
+            Debug.Log("Check Point: " + newCheckPoint);
+        }
 
-        // Hiện panel game over
-        screenGameOver.SetActive(true);
-
-        // Đặt trạng thái game over
-        isGameOver = true;
     }
+    public void ReturnToCheckPoint()
+    {
+        if (newCheckPoint != null)
+        {
+            // Di chuyển người chơi đến vị trí của điểm kiểm tra mới nhất đã lưu
+            transform.position = newCheckPoint;
+
+
+            // Reset trạng thái hoặc thông số khác của người chơi nếu cần
+            curentHealth = maxHealth;
+            barController.UpdateHealthBar(curentHealth, maxHealth);
+
+
+            // Thiết lập sức khỏe của các đối tượng EnemyAI
+            GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemyObject in enemyObjects)
+            {
+                EnemyAI enemyAIComponent = enemyObject.GetComponent<EnemyAI>();
+                if (enemyAIComponent != null)
+                {
+                    enemyAIComponent.SetHealth(enemyAIComponent.maxHealth);
+                    enemyAIComponent.ReturnToPosSpam();
+                    StopCoroutine(enemyAIComponent.coroutine);
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Không có điểm kiểm tra nào được lưu.");
+        }
+    }
+
 
     private void OnDrawGizmosSelected()
     {

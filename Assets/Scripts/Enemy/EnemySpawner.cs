@@ -12,7 +12,8 @@ public class EnemySpawner : MonoBehaviour
     private float spawnTimer = 0f;
     private int numberOfEnemiesSpawned = 0;
 
-    public Transform spawnPoint;
+    public GameObject spawnPoint;
+
 
     void Start()
     {
@@ -41,8 +42,11 @@ public class EnemySpawner : MonoBehaviour
         {
             if (spawnPoint != null)
             {
-                Vector2 spawnPosition = spawnPoint.position;
-                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                Vector2 spawnPosition = spawnPoint.transform.position;
+                GameObject enemyInstance = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                // Thiết lập điểm spawn là cha của quái vật
+                enemyInstance.transform.parent = spawnPoint.transform;
+
                 spawnTimer = 0f;
                 numberOfEnemiesSpawned++;
             }
@@ -55,9 +59,6 @@ public class EnemySpawner : MonoBehaviour
 
     bool CheckSpawnLimit()
     {
-        /*        int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-                int a = enemyPrefab.GetInstanceID();
-                return currentEnemies < maxNumberOfEnemies && numberOfEnemiesSpawned < maxNumberOfEnemies;*/
         return numberOfEnemiesSpawned < maxNumberOfEnemies;
     }
 }

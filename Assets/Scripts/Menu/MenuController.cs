@@ -6,33 +6,21 @@ using TMPro;
 
 public class MenuController : MonoBehaviour
 {
-    [SerializeField]
-    private Button btnStart;
-    [SerializeField]
-    private Button btnExit;
-    [SerializeField]
-    private GameObject screenMenu;
-    [SerializeField]
-    private GameObject screenLevel;
-    [SerializeField]
-    private GameObject map1;
-    [SerializeField]
-    private GameObject player;
-    [SerializeField]
-    private GameObject screenBar;
-    [SerializeField]
-    private GameObject screenDeath;
-    [SerializeField]
-    private Button btnHome;
-    [SerializeField]
-    private Button btnBack;
+    public Button btnStart;
+    public Button btnExit;
+    public GameObject screenMenu;
+    public GameObject map1;
+    public GameObject player;
+    public GameObject screenBar;
+    public GameObject screenDeath;
+    public Button btnHome;
+    public Button btnBack;
 
     // Start is called before the first frame update
     public void Start()
     {
         HideScreen(screenDeath);
         HideScreen(map1);
-        HideScreen(screenLevel);
         HideScreen(player);
         HideScreen(screenBar);
         HideScreen(screenDeath);
