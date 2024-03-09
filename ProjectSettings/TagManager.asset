@@ -11,6 +11,11 @@ TagManager:
   - Bullet
   - OverUI
   - PosSmile
+  - Bow
+  - PosBee
+  - npc1
+  - npc2
+  - UpdateUI
   layers:
   - Default
   - TransparentFX

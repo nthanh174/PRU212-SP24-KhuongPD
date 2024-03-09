@@ -4,14 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BarController : MonoBehaviour
+public class BarUI : MonoBehaviour
 {
     public Image redBar;
     public TextMeshProUGUI txtHealth;
     public TextMeshProUGUI txtCoin;
 
     private int currentCoin = 0;
-    private int getCoin = 0;
     private int startCoin = 0;
 
     public void UpdateHealthBar(int currentHealth, int maxHealth)
@@ -22,8 +21,7 @@ public class BarController : MonoBehaviour
 
     public void UpdateCoinhBar(int coin)
     {
-        getCoin += coin;
-        currentCoin = startCoin + getCoin;
+        currentCoin = startCoin + coin;
         txtCoin.text = currentCoin.ToString();
     }
 }

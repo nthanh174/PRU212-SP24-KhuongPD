@@ -21,9 +21,12 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed = 3f; // tốc độ của quái
     public float nextWPDistance = 0.3f;
     public float maxDistanceToPlayer = 15f; // Khoảng cách tối đa giữa EnemyAI và Player để bắt đầu di chuyển về phía Player
+    public float maxDistancePos = 20f;
 
-    public float distanceToPlayer = 50f;// di chuyển cách người chơi 1 khoảng X
-    public float desiredHeight = 50f; // di chuyển cách người chơi 1 khoảng Y
+    private bool isReturning = false;
+
+    public float widthToPlayer = 15f;// di chuyển cách người chơi 1 khoảng X
+    public float heightToPlayer = 10f; // di chuyển cách người chơi 1 khoảng Y
 
     //attack
     public bool isAttack = false;
@@ -34,6 +37,7 @@ public class EnemyAI : MonoBehaviour
     public float attackSpeed = 9f;
     public float timeBtwAttack = 2f;
     public float attackCooldown;
+    private bool isAttackByPlayer;
 
     //health
     public TextMeshPro txtHealth;
@@ -56,10 +60,7 @@ public class EnemyAI : MonoBehaviour
         if(attackCooldown < 0f)
         {
             attackCooldown = timeBtwAttack;
-            if (IsPlayerInRange(attackRange) && attackFar)
-            {
-                EnemyAttack();
-            } else if (!attackFar)
+            if (IsPlayerInRange(attackRange) && isAttack)
             {
                 EnemyAttack();
             }
@@ -70,16 +71,26 @@ public class EnemyAI : MonoBehaviour
     //điều khuyển quái
     void ChangeDirection()
     {
+        // Lấy vị trí của người chơi
         Vector3 playerPos = FindObjectOfType<PlayerController>().transform.position;
+        // Tính toán hướng từ đối tượng hiện tại đến người chơi
         Vector2 directionToPlayer = ((Vector2)playerPos - (Vector2)transform.position).normalized;
 
         if (directionToPlayer.x >= 0.01f)
         {
+            // Đổi hướng của cha
             transform.localScale = new Vector2(1f, 1f);
         }
         else if (directionToPlayer.x <= -0.01f)
         {
+            // Đổi hướng của cha
             transform.localScale = new Vector2(-1f, 1f);
+        }
+
+        // Đảo ngược hướng của tất cả các con
+        foreach (Transform child in transform)
+        {
+            child.localScale = new Vector2(1 / transform.localScale.x, 1);
         }
     }
 
@@ -99,7 +110,7 @@ public class EnemyAI : MonoBehaviour
 
     void EnemyAttack()
     {
-        if (attackFar)
+        if (attackFar && !isReturning)
         {
             var attackTmp = Instantiate(flyAttack, transform.position, Quaternion.identity);
 
@@ -144,12 +155,18 @@ public class EnemyAI : MonoBehaviour
     // nhận damge
     public void TakeDamage(int damage)
     {
-        Debug.Log("Enemy takes damage: " + damage);
-        currentHealth -= damage;
-        Debug.Log("Enemy Health: " + currentHealth);
+        if (!isReturning)
+        {
+            currentHealth -= damage;
+        }
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             Die();
+        }
+        if (currentHealth/maxHealth < 1)
+        {
+            isAttackByPlayer = true;
         }
         SetHealth(currentHealth);
     }
@@ -180,24 +197,59 @@ public class EnemyAI : MonoBehaviour
         // Tạo vàng tại vị trí hiện tại của quái vật
         Instantiate(goldPrefab, transform.position, Quaternion.identity);
     }
-    //
 
     // Tìm đường đến người chơi
-
     void CalculatePath()
     {
         Vector3 playerPos = FindObjectOfType<PlayerController>().transform.position;
         float distanceToPlayer = Vector3.Distance(transform.position, playerPos); // Tính khoảng cách đến Player
 
-        if (distanceToPlayer <= maxDistanceToPlayer) // Kiểm tra nếu khoảng cách nhỏ hơn hoặc bằng khoảng cách tối đa
+        Vector2 target = Vector2.zero;
+
+        if (isAttackByPlayer && !isReturning)
         {
-            Vector2 target = FindTarget();
-            if (seeker.IsDone() && (updateContinuesPath || reachDestination))
+            target = FindTarget();
+            if (distanceToPlayer <= maxDistanceToPlayer)
             {
-                seeker.StartPath(transform.position, target, OnPathComplete);
+                isAttackByPlayer = false;
             }
+
+        }else if (distanceToPlayer <= maxDistanceToPlayer && !isReturning) // Kiểm tra nếu khoảng cách nhỏ hơn hoặc bằng khoảng cách tối đa hoặc quái vật bị tấn công
+        {
+            target = FindTarget();
+        }else if (distanceToPlayer > maxDistanceToPlayer && !isReturning)
+        {
+            target = (Vector2)transform.parent.position; // Đặt vị trí spam là mục tiêu
+            SetHealth(maxHealth);
         }
+
+        if (isReturning)
+        {
+            target = (Vector2)transform.parent.position; // Đặt vị trí spam là mục tiêu
+            SetHealth(maxHealth);
+        }
+
+        float distanceToPos = Vector3.Distance(transform.position, transform.parent.position);
+        if (distanceToPos >= maxDistancePos)
+        {
+            target = (Vector2)transform.parent.position; // Đặt vị trí spam là mục tiêu
+            isAttackByPlayer = false; // Đặt lại trạng thái là không bị tấn công
+            isReturning = true;
+        }
+
+        if (distanceToPos <= 2f)
+        {
+            isReturning = false;
+        }
+
+        // Bắt đầu tính toán đường đi
+        if (seeker.IsDone() && (updateContinuesPath || reachDestination))
+        {
+            seeker.StartPath(transform.position, target, OnPathComplete);
+        }
+        Debug.Log(isReturning);
     }
+
 
     Vector2 FindTarget()
     {
@@ -208,9 +260,14 @@ public class EnemyAI : MonoBehaviour
             Vector2 directionToPlayer = ((Vector2)playerPos - (Vector2)transform.position).normalized;
 
             // Tính toán vị trí mục tiêu dựa trên hướng và khoảng cách, cũng như độ cao mong muốn
-            Vector2 target = (Vector2)transform.position + directionToPlayer * distanceToPlayer;
-            target += Vector2.up * desiredHeight;
-
+            Vector2 target = (Vector2)transform.position + directionToPlayer * widthToPlayer;
+            
+            if(playerPos.y + heightToPlayer < target.y) {
+                target.y = playerPos.y - heightToPlayer;
+            } else
+            {
+                target.y = playerPos.y + heightToPlayer;
+            }
             return target;
         }
         else
