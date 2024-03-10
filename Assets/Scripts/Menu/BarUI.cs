@@ -10,8 +10,7 @@ public class BarUI : MonoBehaviour
     public TextMeshProUGUI txtHealth;
     public TextMeshProUGUI txtCoin;
 
-    private int currentCoin = 0;
-    private int startCoin = 0;
+    public int currentCoin = 0;
 
     public void UpdateHealthBar(int currentHealth, int maxHealth)
     {
@@ -21,7 +20,7 @@ public class BarUI : MonoBehaviour
 
     public void UpdateCoinhBar(int coin)
     {
-        currentCoin = startCoin + coin;
+        currentCoin += coin;
         txtCoin.text = currentCoin.ToString();
     }
 }

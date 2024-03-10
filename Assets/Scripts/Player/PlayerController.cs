@@ -26,9 +26,14 @@ public class PlayerController : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask enemyLayers;
 
+/*    public int bow = 1/10;
+    public int kinght = 1/5;*/
 
+    public int defaulDamage = 20;
+    public int maxDamage = 20;
+    public int defaulHealth = 100;
     public int maxHealth = 100;
-    private int curentHealth;
+    public int curentHealth;
     public BarUI barUI;
 
 
@@ -56,7 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         // test trừ máu
         if (Input.GetKeyUp(KeyCode.G)) {
-            TakeDamage(20);
+            TakeDamage(maxDamage);
         }
 
         Move();
@@ -169,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             var attackTmp = Instantiate(bowWeapon, transform.position, Quaternion.identity);
 
-            attackTmp.GetComponent<BowWeapon>().SetDamageToEnemy(30);
+            attackTmp.GetComponent<BowWeapon>().SetDamageToEnemy(maxDamage);
 
             Rigidbody2D rb = attackTmp.GetComponent<Rigidbody2D>();
 
@@ -200,11 +205,11 @@ public class PlayerController : MonoBehaviour
                 {
                     if(attackType == 1)
                     {
-                        TakeDamage(20);
+                        TakeDamage(maxDamage + maxDamage / 5);
                     }
                     else
                     {
-                        TakeDamage(50);
+                        TakeDamage(maxDamage + maxDamage / 2);
                     }
                 }
             }

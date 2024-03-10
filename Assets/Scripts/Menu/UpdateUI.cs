@@ -12,43 +12,96 @@ public class UpdateUI : MonoBehaviour
     public Button btnDamageDown;
     public Button btnHealthUp;
     public Button btnHealthDown;
-    public Button btnConfirm;
     public Button btnExist;
 
     public GameObject updateUI;
     public PlayerController playerController;
+    public BarUI bar;
 
-    BarUI bar;
 
     private void Start()
     {
+
+        txtHealth.SetText(playerController.maxHealth.ToString());
+        txtDamage.SetText(playerController.maxDamage.ToString());
+
         btnDamageUp = GameObject.Find("btn+Damage").GetComponent<Button>();
         btnDamageDown = GameObject.Find("btn-Damage").GetComponent<Button>();
 
         btnHealthUp = GameObject.Find("btn+Health").GetComponent<Button>();
         btnHealthDown = GameObject.Find("btn-Health").GetComponent<Button>();
 
-        btnConfirm = GameObject.Find("btn-Confirm").GetComponent<Button>();
         btnExist = GameObject.Find("btn-Exits").GetComponent<Button>();
 
         // Thêm sự kiện onClick bằng cách gọi phương thức AddListener và truyền vào phương thức RestartGame
-        btnDamageUp.onClick.AddListener(UpdateDamage);
-        btnDamageDown.onClick.AddListener(UpdateDamage);
+        btnDamageUp.onClick.AddListener(() => UpdateDamage("Up"));
+        btnDamageDown.onClick.AddListener(() => UpdateDamage("Down"));
 
-        btnHealthUp.onClick.AddListener(UpdateHealth);
-        btnHealthDown.onClick.AddListener(UpdateHealth);
+        btnHealthUp.onClick.AddListener(() => UpdateHealth("Up"));
+        btnHealthDown.onClick.AddListener(() => UpdateHealth("Down"));
 
-        btnConfirm.onClick.AddListener(Confirm);
         btnExist.onClick.AddListener(Exits);
     }
-    public void UpdateHealth()
+    public void UpdateHealth(string action)
     {
-
+        if (action.Equals("Up"))
+        {
+            if(bar.currentCoin < 10)
+            {
+                Debug.Log("Bạn không đủ coin");
+            }
+            else
+            {
+                playerController.maxHealth += 50;
+                bar.UpdateCoinhBar(-10);
+                playerController.curentHealth = playerController.maxHealth;
+                bar.UpdateHealthBar(playerController.maxHealth, playerController.maxHealth);
+            }
+        }
+        else if (action.Equals("Down"))
+        {
+            if (playerController.maxHealth > playerController.defaulHealth)
+            {
+                playerController.maxHealth -= 50;
+                playerController.curentHealth = playerController.maxHealth;
+                bar.UpdateCoinhBar(10);
+                bar.UpdateHealthBar(playerController.maxHealth, playerController.maxHealth);
+            }
+            else
+            {
+                Debug.Log("Máu là về mức mặc định");
+            }
+        }
+        txtHealth.SetText(playerController.maxHealth.ToString());
     }
 
-    public void UpdateDamage()
+    public void UpdateDamage(string action)
     {
-
+        if (action.Equals("Up"))
+        {
+            if (bar.currentCoin < 10)
+            {
+                Debug.Log("Bạn không đủ coin");
+            }
+            else
+            {
+                playerController.maxDamage += 10;
+                bar.UpdateCoinhBar(-10);
+            }
+        }
+        else if (action.Equals("Down"))
+        {
+            if (playerController.maxDamage > playerController.defaulDamage)
+            {
+                playerController.maxDamage -= 10;
+                bar.UpdateCoinhBar(10);
+            }
+            else
+            {
+                Debug.Log("Damage là về mức mặc định");
+            }
+        }
+        txtDamage.SetText(playerController.maxDamage.ToString());
     }
 
     public void Confirm()
