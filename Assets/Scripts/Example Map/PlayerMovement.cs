@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal");   //direction   GetAxis: smooths - GetAxisRaw:raw
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);    //y: thành phần ngang của vận tốc
 
+
         if (Input.GetButtonDown("Jump") && IsGrounded()){
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -45,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         MovementState state;
         if (dirX > 0f) //right
         {
-            //anim.SetBool("running", true);
             state = MovementState.run;
             sprite.flipX = false;
         }

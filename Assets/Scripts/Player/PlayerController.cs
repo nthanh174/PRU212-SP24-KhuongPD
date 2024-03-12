@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 10; // Tốc độ chạy
     public float jumpForce = 10; // Độ cao khi nhảy
-    private bool isGrounded; // Kiểm tra khi có sự va chạm vào map
     private Rigidbody2D rb;
     public Animator animator;
 
@@ -64,8 +63,6 @@ public class PlayerController : MonoBehaviour
             TakeDamage(maxDamage);
         }
 
-        Move();
-        Jump();
         ChangeWeapon();
         Attack();
         SetUpdateUI();
@@ -81,41 +78,6 @@ public class PlayerController : MonoBehaviour
         else if (move < 0)
         {
             transform.localScale = new Vector2(-1, 1); // Đổi X thành âm
-        }
-    }
-    void Move()
-    {
-        float move = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(move, 0);
-        if (isGrounded)
-        {
-            rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
-            animator.SetFloat("Speed", Mathf.Abs(move));
-            ChangeDirection(move);
-        }
-        else
-        {
-            // Ngừng animation chạy khi nhân vật không di chuyển trên mặt đất
-            animator.SetFloat("Speed", 0);
-        }
-
-    }
-    void Jump()
-    {
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-
-            animator.SetBool("isJumping", true);
-            isGrounded = false; // Cập nhật isGrounded ngay khi nhảy
-        }
-        else
-        {
-            // Ngừng animation nhảy khi nhân vật không nhảy
-            if (isGrounded)
-            {
-                animator.SetBool("isJumping", false);
-            }
         }
     }
     void ChangeWeapon()
@@ -301,15 +263,6 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-            // Chỉ kích hoạt animation nhảy khi nhân vật đang ở mặt đất và đang không thực hiện nhảy
-            if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.UpArrow) && !Input.GetKey(KeyCode.Space))
-            {
-                animator.SetBool("isJumping", false);
-            }
-        }
 
         // xử lý khi nhân vật chạm vào vàng
         if (collision.gameObject.CompareTag("Gold"))
@@ -317,15 +270,6 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             Debug.Log("Đã ăn vàng");
             barUI.UpdateCoinhBar(10);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-            animator.SetBool("isJumping", true); // Bật animation nhảy khi nhân vật rời khỏi mặt đất
         }
     }
 
