@@ -17,6 +17,8 @@ TagManager:
   - npc2
   - UpdateUI
   - Coin
+  - Gate1
+  - Gate2
   layers:
   - Default
   - TransparentFX
