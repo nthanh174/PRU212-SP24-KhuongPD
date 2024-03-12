@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         ChangeWeapon();
         Attack();
         SetUpdateUI();
+        Teleport();
     }
 
     void ChangeDirection(float move)
@@ -242,16 +243,47 @@ public class PlayerController : MonoBehaviour
                 updateUI.isActive(true);
             }
         }
-        if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc1").GetComponent<Collider2D>()))
+/*        if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc1").GetComponent<Collider2D>()))
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Time.timeScale = 0f;
                 updateUI.isActive(true);
             }
-        }
+        }*/
     }
 
+    public void Teleport()
+    {
+        if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("Gate1").GetComponent<Collider2D>()))
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                transform.position = GameObject.FindGameObjectWithTag("Gate2").transform.position;
+            }
+        }
+        else if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("Gate2").GetComponent<Collider2D>()))
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                transform.position = GameObject.FindGameObjectWithTag("Gate1").transform.position;
+            }
+        }
+        else if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("Gate3").GetComponent<Collider2D>()))
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                transform.position = GameObject.FindGameObjectWithTag("Gate4").transform.position;
+            }
+        }
+        else if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("Gate4").GetComponent<Collider2D>()))
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                transform.position = GameObject.FindGameObjectWithTag("Gate3").transform.position;
+            }
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

@@ -247,7 +247,6 @@ public class EnemyAI : MonoBehaviour
         {
             seeker.StartPath(transform.position, target, OnPathComplete);
         }
-        Debug.Log(isReturning);
     }
 
 
