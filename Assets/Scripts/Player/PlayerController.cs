@@ -205,11 +205,11 @@ public class PlayerController : MonoBehaviour
                 {
                     if(attackType == 1)
                     {
-                        TakeDamage(maxDamage + maxDamage / 5);
+                        enemyAI.TakeDamage(maxDamage + maxDamage / 5);
                     }
                     else
                     {
-                        TakeDamage(maxDamage + maxDamage / 2);
+                        enemyAI.TakeDamage(maxDamage + maxDamage / 2);
                     }
                 }
             }
