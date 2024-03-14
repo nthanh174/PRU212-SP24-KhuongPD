@@ -22,7 +22,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        // Kiểm tra nếu điều kiện khoảng cách giữa người chơi và quái vật được thỏa mãn
         if (!canStartSpawning)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, FindObjectOfType<PlayerController>().transform.position);
@@ -32,7 +31,6 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        // Đếm thời gian giữa các lần spawn
         spawnTimer += Time.deltaTime;
     }
 
@@ -44,7 +42,6 @@ public class EnemySpawner : MonoBehaviour
             {
                 Vector2 spawnPosition = spawnPoint.transform.position;
                 GameObject enemyInstance = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                // Thiết lập điểm spawn là cha của quái vật
                 enemyInstance.transform.parent = spawnPoint.transform;
 
                 spawnTimer = 0f;

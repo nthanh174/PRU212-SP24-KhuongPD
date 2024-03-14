@@ -8,14 +8,14 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10; // Tốc độ chạy
-    public float jumpForce = 10; // Độ cao khi nhảy
+    public float speed = 10;
+    public float jumpForce = 10;
     private Rigidbody2D rb;
     public Animator animator;
 
 
-    private int CurrentWeaponNo = 0; // Theo dõi loại vũ khí hiện tại, mặc định là không cầm vũ khí
-    private float[] weaponLayerWeights; // Mảng lưu trữ trọng số của các layer vũ khí
+    private int CurrentWeaponNo = 0;
+    private float[] weaponLayerWeights;
 
     public GameObject bowWeapon;
     public float attackSpeed = 10f;
@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        // Khởi tạo mảng weaponLayerWeights với kích thước bằng với số lượng layer trong Animator
         weaponLayerWeights = new float[animator.layerCount];
         curentHealth = maxHealth;
         barUI.UpdateHealthBar(curentHealth, maxHealth);
@@ -58,7 +57,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // test trừ máu
         if (Input.GetKeyUp(KeyCode.G)) {
             TakeDamage(maxDamage);
         }
@@ -71,14 +69,13 @@ public class PlayerController : MonoBehaviour
 
     void ChangeDirection(float move)
     {
-        // Đổi hướng nhân vật
         if (move > 0)
         {
-            transform.localScale = new Vector2(1, 1); // Đổi X thành dương
+            transform.localScale = new Vector2(1, 1);
         }
         else if (move < 0)
         {
-            transform.localScale = new Vector2(-1, 1); // Đổi X thành âm
+            transform.localScale = new Vector2(-1, 1);
         }
     }
     void ChangeWeapon()
@@ -86,32 +83,27 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            CurrentWeaponNo = 1; // Chuyển sang vũ khí 1
+            CurrentWeaponNo = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            CurrentWeaponNo = 2; // Chuyển sang vũ khí 2
+            CurrentWeaponNo = 2;
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            CurrentWeaponNo = 0; // Mặc định không cầm vũ khí
+            CurrentWeaponNo = 0;
         }
 
-        // Thiết lập trọng số của các layer vũ khí trong mảng weaponLayerWeights
         for (int i = 0; i < weaponLayerWeights.Length; i++)
         {
-            // Nếu index của layer trùng với CurrentWeaponNo, thiết lập trọng số là 1
             if (i == CurrentWeaponNo)
             {
                 weaponLayerWeights[i] = 1;
             }
-            // Ngược lại, thiết lập trọng số là 0
             else
             {
                 weaponLayerWeights[i] = 0;
             }
-
-            // Thiết lập trọng số của layer trong Animator bằng giá trị từ mảng weaponLayerWeights
             animator.SetLayerWeight(i, weaponLayerWeights[i]);
         }
     }
@@ -141,16 +133,12 @@ public class PlayerController : MonoBehaviour
 
             Rigidbody2D rb = attackTmp.GetComponent<Rigidbody2D>();
 
-            // Lấy vị trí của chuột trong không gian của game
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Tính toán hướng từ vị trí của đối tượng đến vị trí của chuột
             Vector2 direction = (mousePosition - transform.position).normalized;
 
-            // Tính toán góc quay để xoay mũi tên
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            // Xoay mũi tên
             attackTmp.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             rb.AddForce(direction.normalized * attackSpeed, ForceMode2D.Impulse);
@@ -190,7 +178,6 @@ public class PlayerController : MonoBehaviour
         barUI.UpdateHealthBar(curentHealth, maxHealth);
     }
 
-    //Check Point Pos
     public void UpdateCheckPoint(Vector2 checkPoint)
     {
         if(newCheckPoint != checkPoint)
@@ -204,16 +191,11 @@ public class PlayerController : MonoBehaviour
     {
         if (newCheckPoint != null)
         {
-            // Di chuyển người chơi đến vị trí của điểm kiểm tra mới nhất đã lưu
             transform.position = newCheckPoint;
 
-
-            // Reset trạng thái hoặc thông số khác của người chơi nếu cần
             curentHealth = maxHealth;
             barUI.UpdateHealthBar(curentHealth, maxHealth);
 
-
-            // Thiết lập sức khỏe của các đối tượng EnemyAI
             GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemyObject in enemyObjects)
             {
@@ -232,8 +214,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //Set Actice UpdateUI
-
     public void SetUpdateUI() {
         if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc2").GetComponent<Collider2D>()))
         {
@@ -243,14 +223,14 @@ public class PlayerController : MonoBehaviour
                 updateUI.isActive(true);
             }
         }
-/*        if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc1").GetComponent<Collider2D>()))
+        if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc1").GetComponent<Collider2D>()))
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Time.timeScale = 0f;
                 updateUI.isActive(true);
             }
-        }*/
+        }
     }
 
     public void Teleport()
@@ -295,8 +275,6 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-
-        // xử lý khi nhân vật chạm vào vàng
         if (collision.gameObject.CompareTag("Gold"))
         {
             Destroy(collision.gameObject);

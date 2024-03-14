@@ -5,8 +5,6 @@ using UnityEngine;
 public class BowWeapon : MonoBehaviour
 {
     private int damageToEnemy = 5;
-
-    // Phương thức để thiết lập giá trị damageToPlayer
     public void SetDamageToEnemy(int damage)
     {
         damageToEnemy = damage;

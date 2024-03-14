@@ -16,7 +16,6 @@ public class MenuController : MonoBehaviour
     public Button btnHome;
     public Button btnBack;
 
-    // Start is called before the first frame update
     public void Start()
     {
         HideScreen(screenDeath);
@@ -28,7 +27,6 @@ public class MenuController : MonoBehaviour
         AddListener();
     }
 
-    // Update is called once per frame
     public void Update()
     {
 
@@ -68,7 +66,6 @@ public class MenuController : MonoBehaviour
     {
         HideScreen(screenDeath);
 
-        // Hiển thị trang home
         DisplayScreen(screenMenu);
     }
     public void ClickStart()

@@ -33,7 +33,6 @@ public class UpdateUI : MonoBehaviour
 
         btnExist = GameObject.Find("btn-Exits").GetComponent<Button>();
 
-        // Thêm sự kiện onClick bằng cách gọi phương thức AddListener và truyền vào phương thức RestartGame
         btnDamageUp.onClick.AddListener(() => UpdateDamage("Up"));
         btnDamageDown.onClick.AddListener(() => UpdateDamage("Down"));
 

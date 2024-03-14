@@ -4,7 +4,6 @@ public class EnemyBullet : MonoBehaviour
 {
     private int damageToPlayer = 5;
 
-    // Phương thức để thiết lập giá trị damageToPlayer
     public void SetDamageToPlayer(int damage)
     {
         damageToPlayer = damage;
