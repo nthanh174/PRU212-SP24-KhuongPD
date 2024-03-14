@@ -217,7 +217,7 @@ public class PlayerController : MonoBehaviour
     public void SetUpdateUI() {
         if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc2").GetComponent<Collider2D>()))
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Time.timeScale = 0f;
                 updateUI.isActive(true);
@@ -225,7 +225,7 @@ public class PlayerController : MonoBehaviour
         }
         if (zone.detecedCollider.Contains(GameObject.FindGameObjectWithTag("npc1").GetComponent<Collider2D>()))
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Time.timeScale = 0f;
                 updateUI.isActive(true);
